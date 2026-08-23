@@ -290,13 +290,13 @@ The backend was tested through both automated tests and Swagger API execution.
 
 Test coverage includes:
 
-- ✅ Patient appointment booking
-- ✅ Duplicate slot protection
-- ✅ Appointment cancellation
-- ✅ Slot release after cancellation
-- ✅ Role-based authorization
-- ✅ Doctor/patient access control
-- ✅ Slot generation
+-  Patient appointment booking
+-  Duplicate slot protection
+-  Appointment cancellation
+-  Slot release after cancellation
+-  Role-based authorization
+-  Doctor/patient access control
+-  Slot generation
 
 ---
 
