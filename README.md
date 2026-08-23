@@ -274,7 +274,8 @@ Protected endpoints use JWT Bearer authentication.
 
 The Swagger UI allows authenticated requests through the **Authorize 🔒** button.
 
-![Authentication](docs/screenshots/authentication.png)
+![Authentication]![Uploading Screenshot 2026-08-23 154425.png…]()
+
 
 ---
 
