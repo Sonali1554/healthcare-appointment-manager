@@ -229,7 +229,8 @@ The API was tested using the built-in Swagger UI provided by FastAPI.
 
 The Swagger interface provides interactive documentation for all available endpoints, including authentication, doctor availability, appointment slots, and appointment management.
 
-![Swagger API Documentation](docs/screenshots/swagger-overview.png)
+![Swagger API Documentation]<img width="952" height="1156" alt="Screenshot 2026-08-23 203326" src="https://github.com/user-attachments/assets/22a0febc-73ea-4c7f-8c45-c5efed56aea4" />
+
 
 ---
 
@@ -243,7 +244,8 @@ The appointment module supports:
 - 👨‍⚕️ Get doctor appointments
 - 🔄 Update appointment status
 
-![Appointment Management APIs](docs/screenshots/appointment-management.png)
+![Appointment Management APIs]<img width="958" height="1127" alt="Screenshot 2026-08-23 203336" src="https://github.com/user-attachments/assets/325082ed-daf3-4f83-a8fb-d0c800023a4e" />
+
 
 ---
 
@@ -259,7 +261,10 @@ Example:
 }
 ```
 
-![Appointment Status Update](docs/screenshots/appointment-status.png)
+![Appointment Status Update]<img width="966" height="1141" alt="Screenshot 2026-08-23 191407" src="https://github.com/user-attachments/assets/4c46d678-5ad9-4945-95fa-5b68a8561c15" />
+<img width="966" height="1141" alt="Screenshot 2026-08-23 191407" src="https://github.com/user-attachments/assets/b7d8a71b-6148-43b0-a41b-88d5805a0039" />
+<img width="960" height="1138" alt="Screenshot 2026-08-23 202439" src="https://github.com/user-attachments/assets/e5d800a2-b14f-4651-8c76-367763ae6063" />
+
 
 ---
 
@@ -305,5 +310,6 @@ Example response:
 
 This screenshot represents an error encountered during API testing and is included as part of the debugging/testing process.
 
-![API Error Testing](docs/screenshots/api-error.png)
+![API Error Testing]<img width="835" height="770" alt="Screenshot 2026-08-23 182737" src="https://github.com/user-attachments/assets/9b04e9ac-f5b7-4f54-a9b4-1af0e69e07b9" />
+
 
