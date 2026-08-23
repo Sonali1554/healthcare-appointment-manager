@@ -263,7 +263,7 @@ Example:
 
 ![Appointment Status Update]<img width="966" height="1141" alt="Screenshot 2026-08-23 191407" src="https://github.com/user-attachments/assets/4c46d678-5ad9-4945-95fa-5b68a8561c15" />
 <img width="966" height="1141" alt="Screenshot 2026-08-23 191407" src="https://github.com/user-attachments/assets/b7d8a71b-6148-43b0-a41b-88d5805a0039" />
-<img width="960" height="1138" alt="Screenshot 2026-08-23 202439" src="https://github.com/user-attachments/assets/e5d800a2-b14f-4651-8c76-367763ae6063" />
+
 
 
 ---
