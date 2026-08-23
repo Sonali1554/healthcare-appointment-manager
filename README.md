@@ -221,3 +221,89 @@ erDiagram
     }
 ```
 
+## 📸 API Demonstration
+
+The API was tested using the built-in Swagger UI provided by FastAPI.
+
+### 🚀 Swagger API Documentation
+
+The Swagger interface provides interactive documentation for all available endpoints, including authentication, doctor availability, appointment slots, and appointment management.
+
+![Swagger API Documentation](docs/screenshots/swagger-overview.png)
+
+---
+
+### 🗓️ Appointment Management
+
+The appointment module supports:
+
+- 📋 Get patient appointments
+- ➕ Create appointments
+- ❌ Cancel appointments
+- 👨‍⚕️ Get doctor appointments
+- 🔄 Update appointment status
+
+![Appointment Management APIs](docs/screenshots/appointment-management.png)
+
+---
+
+### 🔄 Appointment Status Update
+
+Appointment status can be updated through the PATCH endpoint.
+
+Example:
+
+```json
+{
+  "status": "completed"
+}
+```
+
+![Appointment Status Update](docs/screenshots/appointment-status.png)
+
+---
+
+### 🔐 Authentication & Authorization
+
+Protected endpoints use JWT Bearer authentication.
+
+The Swagger UI allows authenticated requests through the **Authorize 🔒** button.
+
+![Authentication](docs/screenshots/authentication.png)
+
+---
+
+### 🧪 API Testing
+
+The backend was tested through both automated tests and Swagger API execution.
+
+```text
+6 passed
+```
+
+Test coverage includes:
+
+- ✅ Patient appointment booking
+- ✅ Duplicate slot protection
+- ✅ Appointment cancellation
+- ✅ Slot release after cancellation
+- ✅ Role-based authorization
+- ✅ Doctor/patient access control
+- ✅ Slot generation
+
+---
+
+### ⚠️ Error Handling
+
+The API also validates invalid requests and unauthorized operations.
+
+Example response:
+
+```text
+500 Internal Server Error
+```
+
+This screenshot represents an error encountered during API testing and is included as part of the debugging/testing process.
+
+![API Error Testing](docs/screenshots/api-error.png)
+
