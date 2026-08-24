@@ -35,10 +35,6 @@ https://healthcare-appointment-manager-sz8l.onrender.com
 **Interactive API Docs:**  
 https://healthcare-appointment-manager-sz8l.onrender.com/docs
 
-### 💻 GitHub Repository
-
-https://github.com/Sonali1554/healthcare-appointment-manager
-
 ---
 
 # 📋 Table of Contents
