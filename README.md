@@ -69,44 +69,97 @@ Role Validation
   ↓
 Protected Resource
 
+## 🏗️ System Architecture & Workflow
+
+```mermaid
+flowchart TD
+
+    %% =========================
+    %% AUTHENTICATION
+    %% =========================
+
+    A[👤 User] --> B{🔐 Authentication}
+
+    B -->|Register| C[📝 Create Account]
+    B -->|Login| D[🔑 Validate Credentials]
+
+    C --> D
+    D --> E[🎟️ Generate JWT Access Token]
+
+    E --> F[🌐 Authenticated API Request]
+    F --> G[🛡️ JWT Validation]
+    G --> H[👤 User Lookup]
+    H --> I{⚙️ Role Validation}
+
+    %% =========================
+    %% ROLE BASED FLOW
+    %% =========================
+
+    I -->|👨‍⚕️ Doctor| J[Doctor APIs]
+    I -->|👤 Patient| K[Patient APIs]
+    I -->|❌ Unauthorized| X[🚫 403 Forbidden]
+
+    %% =========================
+    %% DOCTOR FLOW
+    %% =========================
+
+    J --> L[📅 Set Doctor Availability]
+    L --> M[⚙️ Generate Appointment Slots]
+    M --> N[🟢 Available Slots]
+
+    %% =========================
+    %% PATIENT FLOW
+    %% =========================
+
+    K --> O[🔎 View Available Slots]
+    N --> O
+    O --> P[📅 Select Appointment Slot]
+    P --> Q{🔍 Slot Available?}
+
+    Q -->|❌ No| R[⚠️ 409 Conflict]
+    Q -->|✅ Yes| S[🔒 Reserve Slot]
+
+    S --> T[📝 Create Appointment]
+    T --> U[🔵 Mark Slot as BOOKED]
+    U --> V[💾 Commit Database Transaction]
+    V --> W[✅ Appointment Confirmed]
+
+    %% =========================
+    %% APPOINTMENT LIFECYCLE
+    %% =========================
+
+    W --> Y{📋 Appointment Action}
+
+    Y -->|❌ Cancel| Z[Cancel Appointment]
+    Z --> ZA[♻️ Release Slot]
+    ZA --> N
+
+    Y -->|✅ Complete| ZB[Mark Appointment Completed]
+
+    Y -->|🔄 Update Status| ZC[Update Appointment Status]
+
+    %% =========================
+    %% DATABASE
+    %% =========================
+
+    L -.-> DB[(🗄️ PostgreSQL)]
+    M -.-> DB
+    T -.-> DB
+    U -.-> DB
+    Z -.-> DB
+    ZB -.-> DB
+    ZC -.-> DB
+
+    %% =========================
+    %% API LAYER
+    %% =========================
+
+    F -.-> API[⚡ FastAPI REST API]
+    API -.-> G
 
 
-## 📅 Appointment Booking Workflow
 
-    A[👨‍⚕️ Doctor] --> B[Set Availability]
-
-    B --> C[⚙️ Generate Appointment Slots]
-
-    C --> D[🟢 Available Slots]
-
-    E[👤 Patient] --> F[View Available Slots]
-
-    F --> G[📅 Select Slot]
-
-    G --> H{Is Slot Available?}
-
-    H -->|❌ No| I[⚠️ Return 409 Conflict]
-
-    H -->|✅ Yes| J[🔒 Lock Slot]
-
-    J --> K[📝 Create Appointment]
-
-    K --> L[🔵 Mark Slot as BOOKED]
-
-    L --> M[💾 Commit Transaction]
-
-    M --> N[✅ Appointment Confirmed]
-
-    N --> O{Appointment Action}
-
-    O -->|Cancel| P[❌ Cancel Appointment]
-
-    P --> Q[♻️ Release Slot]
-
-    O -->|Complete| R[✅ Mark Completed]
-```
-
-## 🔐 Authentication Flow
+   
 
 ```mermaid
 sequenceDiagram
