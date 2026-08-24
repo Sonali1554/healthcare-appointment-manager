@@ -24,17 +24,10 @@
 
 👉 https://healthcare-appointment-frontend-mcla.onrender.com
 
-### ⚙️ Backend API
-
-👉 https://healthcare-appointment-manager-sz8l.onrender.com
 
 ### 📚 Swagger API Documentation
 
 👉 https://healthcare-appointment-manager-sz8l.onrender.com/docs
-
-### 💻 GitHub Repository
-
-👉 https://github.com/Sonali1554/healthcare-appointment-manager
 
 ---
 
