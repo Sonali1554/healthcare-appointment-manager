@@ -20,6 +20,10 @@
 
 ## 🌐 Live Demo
 
+## 🎥 Demo Video
+
+▶️ [Watch Demo Video](https://drive.google.com/file/d/1_AdJMOPcPf9tjjekYrmDr7sBpxWBVZgh/view?usp=sharing)
+
 ### 🚀 Frontend
 
 **Live Application:**  
