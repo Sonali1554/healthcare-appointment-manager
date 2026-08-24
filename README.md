@@ -69,6 +69,7 @@ Role Validation
   ↓
 Protected Resource
 
+
 ## 🏗️ System Architecture
 
 ```mermaid
