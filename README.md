@@ -69,11 +69,11 @@ Role Validation
   ↓
 Protected Resource
 
-
 ## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
+
     A[🌐 Client / Swagger UI] --> B[🚀 FastAPI Application]
 
     B --> C[🔐 Authentication]
@@ -87,17 +87,15 @@ flowchart TD
     D --> I[📋 Availability Service]
     I --> J[⚙️ Slot Generation Service]
 
-    J --> K[(🗄️ PostgreSQL)]
-
     E --> J
-    E --> K
 
+    J --> K[(🗄️ PostgreSQL)]
     F --> K
 
     B --> L[🧪 Pytest Test Suite]
 
     M[🔧 Alembic Migrations] --> K
-```
+
 
 ## 📅 Appointment Booking Workflow
 
