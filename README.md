@@ -50,52 +50,34 @@ The application uses JWT-based authentication.
 - 👤 Patient
 - 👨‍⚕️ Doctor
 
-Authentication flow:
-
-```text
-User
-  ↓
-Register / Login
-  ↓
-JWT Access Token
-  ↓
-Authenticated API Request
-  ↓
-JWT Validation
-  ↓
-User Lookup
-  ↓
-Role Validation
-  ↓
-Protected Resource
-
 ## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
+    A["🌐 Client / Swagger UI"] --> B["🚀 FastAPI Application"]
 
-    A[🌐 Client / Swagger UI] --> B[🚀 FastAPI Application]
+    B --> C["🔐 Authentication"]
+    B --> D["👨‍⚕️ Doctor Availability"]
+    B --> E["🗓️ Appointment Slots"]
+    B --> F["📅 Appointment Management"]
 
-    B --> C[🔐 Authentication]
-    B --> D[👨‍⚕️ Doctor Availability]
-    B --> E[🗓️ Appointment Slots]
-    B --> F[📅 Appointment Management]
+    C --> G["🎫 JWT Authentication"]
+    G --> H["👤 User & Role Validation"]
 
-    C --> G[🎫 JWT Authentication]
-    G --> H[👤 User & Role Validation]
-
-    D --> I[📋 Availability Service]
-    I --> J[⚙️ Slot Generation Service]
+    D --> I["📋 Availability Service"]
+    I --> J["⚙️ Slot Generation"]
 
     E --> J
 
-    J --> K[(🗄️ PostgreSQL)]
+    J --> K[("🗄️ PostgreSQL")]
+    E --> K
     F --> K
 
-    B --> L[🧪 Pytest Test Suite]
-
-    M[🔧 Alembic Migrations] --> K
+    B --> L["🧪 Pytest Test Suite"]
+    M["🔧 Alembic Migrations"] --> K
 ```
+
+
 
 
 ## 📅 Appointment Booking Workflow
