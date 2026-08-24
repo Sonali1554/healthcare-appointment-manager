@@ -69,34 +69,7 @@ Role Validation
   ↓
 Protected Resource
 
-## 🏗️ System Architecture
 
-```mermaid
-flowchart TD
-    A[🌐 Client / Swagger UI] --> B[🚀 FastAPI Application]
-
-    B --> C[🔐 Authentication]
-    B --> D[👨‍⚕️ Doctor Availability]
-    B --> E[🗓️ Appointment Slots]
-    B --> F[📅 Appointment Management]
-
-    C --> G[🎫 JWT Authentication]
-    G --> H[👤 User & Role Validation]
-
-    D --> I[📋 Availability Service]
-    I --> J[⚙️ Slot Generation Service]
-
-    J --> K[(🗄️ PostgreSQL)]
-
-    E --> J
-    E --> K
-
-    F --> K
-
-    B --> L[🧪 Pytest Test Suite]
-
-    M[🔧 Alembic Migrations] --> K
-```
 
 ## 📅 Appointment Booking Workflow
 
