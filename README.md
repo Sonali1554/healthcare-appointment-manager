@@ -14,8 +14,6 @@
 
 ## 🚀 Live Deployment
 
-🌐 **Live API:** https://healthcare-appointment-manager-sz8l.onrender.com
-
 📚 **Swagger API Documentation:** https://healthcare-appointment-manager-sz8l.onrender.com/docs
 
 ## 📌 Overview
