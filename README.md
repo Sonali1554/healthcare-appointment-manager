@@ -487,7 +487,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    PATIENT["👤 Patient"]
+    PATIENT[" Patient"]
 
     DASHBOARD["Patient Dashboard"]
 
@@ -503,11 +503,11 @@ flowchart TD
 
     API["FastAPI Appointment API"]
 
-    DATABASE[("🐘 PostgreSQL")]
+    DATABASE[(" PostgreSQL")]
 
-    SUCCESS["✅ Appointment Confirmed"]
+    SUCCESS[" Appointment Confirmed"]
 
-    MYAPPOINTMENTS["📆 My Appointments"]
+    MYAPPOINTMENTS[" My Appointments"]
 
     PATIENT --> DASHBOARD
 
@@ -534,7 +534,7 @@ flowchart TD
 
 ---
 
-# 🔄 API Request Flow
+#  API Request Flow
 
 ```mermaid
 sequenceDiagram
@@ -562,7 +562,7 @@ sequenceDiagram
 
 ---
 
-# 🗄️ Database Architecture
+#  Database Architecture
 
 ```mermaid
 erDiagram
