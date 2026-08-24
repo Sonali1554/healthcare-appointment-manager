@@ -9,101 +9,120 @@
 </p>
 
 <p align="center">
-  <b>A full-stack healthcare appointment management platform for patients and doctors.</b>
+  <b>A full-stack healthcare appointment management platform</b>
 </p>
 
 <p align="center">
-  Secure authentication • Doctor availability • Appointment slots • Appointment booking • Patient dashboard • REST APIs
+  Secure Authentication • Doctor Management • Availability • Appointment Slots • Booking • Patient Dashboard
 </p>
 
 ---
 
-# 🌐 Live Application
+## 🌐 Live Demo
 
 ### 🚀 Frontend
 
-👉 https://healthcare-appointment-frontend-mcla.onrender.com
+**Live Application:**  
+https://healthcare-appointment-frontend-mcla.onrender.com
 
+### ⚙️ Backend API
+
+**Production Backend:**  
+https://healthcare-appointment-manager-sz8l.onrender.com
 
 ### 📚 Swagger API Documentation
 
-👉 https://healthcare-appointment-manager-sz8l.onrender.com/docs
+**Interactive API Docs:**  
+https://healthcare-appointment-manager-sz8l.onrender.com/docs
+
+### 💻 GitHub Repository
+
+https://github.com/Sonali1554/healthcare-appointment-manager
 
 ---
 
-# 📌 Table of Contents
+# 📋 Table of Contents
 
-- [Project Overview](#-project-overview)
+- [Overview](#-overview)
 - [Problem Statement](#-problem-statement)
 - [Solution](#-solution)
 - [Key Features](#-key-features)
-- [Application Workflow](#-application-workflow)
+- [Complete Application Workflow](#-complete-application-workflow)
 - [System Architecture](#-system-architecture)
 - [Frontend Architecture](#-frontend-architecture)
 - [Backend Architecture](#-backend-architecture)
 - [Authentication Flow](#-authentication-flow)
-- [Appointment Booking Flow](#-appointment-booking-flow)
 - [Doctor Availability Flow](#-doctor-availability-flow)
+- [Appointment Booking Flow](#-appointment-booking-flow)
 - [API Request Flow](#-api-request-flow)
 - [Database Architecture](#-database-architecture)
 - [Project Structure](#-project-structure)
 - [Technology Stack](#-technology-stack)
 - [Frontend Screenshots](#-frontend-screenshots)
 - [Backend Screenshots](#-backend-screenshots)
-- [API Documentation](#-api-documentation)
+- [API Endpoints](#-api-endpoints)
 - [Local Setup](#-local-setup)
 - [Deployment](#-deployment)
-- [Testing](#-testing)
 - [Security](#-security)
+- [Testing](#-testing)
+- [Project Status](#-project-status)
 - [Future Improvements](#-future-improvements)
 - [Author](#-author)
 
 ---
 
-# 📖 Project Overview
+# 📖 Overview
 
-Healthcare Appointment Manager is a full-stack web application designed to simplify the process of managing healthcare appointments.
+**Healthcare Appointment Manager** is a full-stack web application designed to simplify and digitize healthcare appointment management.
 
-The platform provides separate capabilities for:
+The platform provides a centralized interface where users can:
 
-- Patients
-- Doctors
-- Appointment management
-- Doctor availability
-- Appointment slots
-- Authentication
-- Profile management
+- Create an account
+- Login securely
+- Access a personalized dashboard
+- Find doctors
+- Check doctor availability
+- View available appointment slots
+- Select an appointment
+- Confirm an appointment
+- View their appointments
+- Manage their profile
 
-The application consists of a **React + Vite frontend** communicating with a **FastAPI REST backend** through HTTP APIs.
+The application consists of a **React + Vite frontend**, a **FastAPI REST backend**, and a **PostgreSQL database**.
 
-Authentication is handled using **JWT access tokens**, while the backend exposes interactive API documentation through **Swagger/OpenAPI**.
+Authentication is implemented using **JWT-based authentication**, while the backend provides interactive **Swagger/OpenAPI documentation**.
 
 ---
 
 # 🎯 Problem Statement
 
-Traditional appointment management can involve:
+Healthcare appointment management can become difficult when patients have to rely on manual scheduling systems.
 
+Common problems include:
+
+- Difficulty finding available doctors
+- Lack of appointment visibility
 - Manual appointment scheduling
-- Difficulty checking doctor availability
-- Unclear appointment timings
-- Lack of centralized appointment information
-- Poor visibility of upcoming appointments
-- Security concerns around healthcare accounts
+- Difficulty managing appointments
+- Lack of centralized healthcare information
+- Security concerns around user accounts
 
-The goal of this project is to provide a centralized digital platform where users can securely manage the appointment process.
+The objective of this project is to provide a secure and user-friendly digital platform for managing healthcare appointments.
 
 ---
 
 # 💡 Solution
 
-The system provides a complete digital workflow:
+The Healthcare Appointment Manager provides a complete digital workflow:
 
 ```text
 User
  │
  ▼
-Registration / Login
+Home Page
+ │
+ ▼
+Register / Login
  │
  ▼
 JWT Authentication
@@ -115,19 +134,1058 @@ Patient Dashboard
 Find Doctor
  │
  ▼
-Check Availability
+Check Doctor Availability
  │
  ▼
-View Appointment Slots
+View Available Slots
  │
  ▼
-Select Slot
+Select Appointment Slot
  │
  ▼
-Book Appointment
- │
- ▼
-Appointment Confirmation
+Confirm Appointment
  │
  ▼
 My Appointments
+```
+
+---
+
+# ✨ Key Features
+
+## 🔐 Authentication
+
+- Patient registration
+- Doctor registration
+- Secure login
+- JWT authentication
+- OAuth2-compatible login
+- Bearer token authorization
+- Protected endpoints
+- Role-based authorization
+- Current-user endpoint
+- Logout functionality
+
+## 👨‍⚕️ Doctor Management
+
+- Doctor accounts
+- Doctor UUID identification
+- Doctor availability
+- Availability lookup
+- Doctor-specific appointment slots
+- Slot generation API
+
+## 🕐 Appointment Slots
+
+- View doctor slots
+- Slot date and time
+- Slot availability status
+- Doctor-specific slots
+- Appointment slot selection
+
+## 📅 Appointment Management
+
+- Appointment booking workflow
+- Appointment confirmation
+- My Appointments
+- Appointment status
+- Appointment cancellation through API
+- Authenticated appointment access
+
+## 👤 Patient Dashboard
+
+- Overview
+- Quick actions
+- Find Doctor
+- Available Slots
+- My Appointments
+- Profile
+- Account information
+- Logout
+
+---
+
+# 🔄 Complete Application Workflow
+
+```mermaid
+flowchart TD
+    A["🏠 Home Page"] --> B{"Existing User?"}
+
+    B -->|"No"| C["📝 Register"]
+    B -->|"Yes"| D["🔐 Login"]
+
+    C --> D
+
+    D --> E["JWT Authentication"]
+
+    E --> F["👤 Patient Dashboard"]
+
+    F --> G["👨‍⚕️ Find Doctor"]
+
+    G --> H["Enter Doctor UUID"]
+
+    H --> I["🔎 Check Available Slots"]
+
+    I --> J["📅 Available Slots"]
+
+    J --> K["Select Appointment Slot"]
+
+    K --> L["📋 Booking Confirmation"]
+
+    L --> M["✅ Confirm Appointment"]
+
+    M --> N["📆 My Appointments"]
+
+    F --> O["👤 Profile"]
+
+    F --> P["🚪 Logout"]
+
+    P --> D
+```
+
+---
+
+# 🏗️ System Architecture
+
+```mermaid
+flowchart TB
+    USER["👤 Patient / Doctor"]
+
+    FRONTEND["🌐 React + Vite Frontend"]
+
+    API["⚙️ FastAPI REST API"]
+
+    AUTH["🔐 Authentication"]
+
+    DOCTOR["👨‍⚕️ Doctor Management"]
+
+    AVAILABILITY["📅 Availability Management"]
+
+    SLOTS["🕐 Appointment Slots"]
+
+    APPOINTMENTS["📆 Appointment Management"]
+
+    DATABASE[("🐘 PostgreSQL")]
+
+    USER --> FRONTEND
+
+    FRONTEND -->|"HTTPS / REST API"| API
+
+    API --> AUTH
+    API --> DOCTOR
+    API --> AVAILABILITY
+    API --> SLOTS
+    API --> APPOINTMENTS
+
+    AUTH --> DATABASE
+    DOCTOR --> DATABASE
+    AVAILABILITY --> DATABASE
+    SLOTS --> DATABASE
+    APPOINTMENTS --> DATABASE
+```
+
+---
+
+# 🏛️ Three-Tier Architecture
+
+```text
+┌────────────────────────────────────────────────────┐
+│                 PRESENTATION LAYER                 │
+│                                                    │
+│                  React + Vite                     │
+│                                                    │
+│  Home │ Login │ Dashboard │ Slots │ Appointments │
+└─────────────────────────┬──────────────────────────┘
+                          │
+                          │ REST API
+                          ▼
+┌────────────────────────────────────────────────────┐
+│                  APPLICATION LAYER                 │
+│                                                    │
+│                    FastAPI                         │
+│                                                    │
+│ Authentication │ Doctors │ Slots │ Appointments  │
+└─────────────────────────┬──────────────────────────┘
+                          │
+                          │ SQL / ORM
+                          ▼
+┌────────────────────────────────────────────────────┐
+│                     DATA LAYER                     │
+│                                                    │
+│                   PostgreSQL                       │
+│                                                    │
+│ Users │ Doctors │ Availability │ Slots │ Bookings │
+└────────────────────────────────────────────────────┘
+```
+
+---
+
+# 🎨 Frontend Architecture
+
+```mermaid
+flowchart TD
+    APP["⚛️ React Application"]
+
+    ROUTER["React Router"]
+
+    HOME["🏠 Home"]
+
+    LOGIN["🔐 Login"]
+
+    REGISTER["📝 Register"]
+
+    DASHBOARD["👤 Patient Dashboard"]
+
+    DOCTOR["👨‍⚕️ Find Doctor"]
+
+    SLOTS["🕐 Available Slots"]
+
+    BOOKING["📅 Booking"]
+
+    APPOINTMENTS["📆 My Appointments"]
+
+    PROFILE["👤 Profile"]
+
+    APP --> ROUTER
+
+    ROUTER --> HOME
+    ROUTER --> LOGIN
+    ROUTER --> REGISTER
+    ROUTER --> DASHBOARD
+
+    DASHBOARD --> DOCTOR
+    DASHBOARD --> SLOTS
+    DASHBOARD --> BOOKING
+    DASHBOARD --> APPOINTMENTS
+    DASHBOARD --> PROFILE
+```
+
+---
+
+# ⚙️ Backend Architecture
+
+```mermaid
+flowchart TD
+    CLIENT["🌐 React Frontend"]
+
+    FASTAPI["⚙️ FastAPI Application"]
+
+    ROUTERS["API Routers"]
+
+    AUTH["🔐 Authentication"]
+
+    DOCTOR["👨‍⚕️ Doctor Service"]
+
+    AVAILABILITY["📅 Availability Service"]
+
+    SLOT["🕐 Slot Service"]
+
+    APPOINTMENT["📆 Appointment Service"]
+
+    ORM["SQLAlchemy ORM"]
+
+    DATABASE[("🐘 PostgreSQL")]
+
+    CLIENT --> FASTAPI
+
+    FASTAPI --> ROUTERS
+
+    ROUTERS --> AUTH
+    ROUTERS --> DOCTOR
+    ROUTERS --> AVAILABILITY
+    ROUTERS --> SLOT
+    ROUTERS --> APPOINTMENT
+
+    AUTH --> ORM
+    DOCTOR --> ORM
+    AVAILABILITY --> ORM
+    SLOT --> ORM
+    APPOINTMENT --> ORM
+
+    ORM --> DATABASE
+```
+
+---
+
+# 🔐 Authentication Flow
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant F as React Frontend
+    participant A as FastAPI Backend
+    participant DB as PostgreSQL
+
+    U->>F: Enter Email + Password
+
+    F->>A: POST /api/v1/auth/login
+
+    A->>DB: Validate Credentials
+
+    DB-->>A: User Data
+
+    A->>A: Generate JWT
+
+    A-->>F: Access Token
+
+    F->>F: Store Token
+
+    F->>A: Protected API Request
+
+    Note over F,A: Authorization: Bearer JWT
+
+    A->>A: Validate JWT
+
+    A->>DB: Fetch Protected Data
+
+    DB-->>A: Data
+
+    A-->>F: JSON Response
+
+    F-->>U: Display Dashboard
+```
+
+---
+
+# 👨‍⚕️ Doctor Availability Flow
+
+```mermaid
+flowchart TD
+    DOCTOR["👨‍⚕️ Doctor"]
+
+    LOGIN["🔐 Doctor Login"]
+
+    AVAILABILITY["📅 Create Availability"]
+
+    API["⚙️ FastAPI"]
+
+    DATABASE[("🐘 PostgreSQL")]
+
+    SLOTS["🕐 Generate Appointment Slots"]
+
+    PATIENT["👤 Patient"]
+
+    VIEW["🔎 View Available Slots"]
+
+    DOCTOR --> LOGIN
+
+    LOGIN --> AVAILABILITY
+
+    AVAILABILITY --> API
+
+    API --> DATABASE
+
+    DATABASE --> SLOTS
+
+    SLOTS --> DATABASE
+
+    PATIENT --> VIEW
+
+    VIEW --> API
+
+    API --> DATABASE
+
+    DATABASE --> VIEW
+```
+
+---
+
+# 📅 Appointment Booking Flow
+
+```mermaid
+flowchart TD
+    PATIENT["👤 Patient"]
+
+    DASHBOARD["Patient Dashboard"]
+
+    DOCTORID["Enter Doctor UUID"]
+
+    CHECK["Check Available Slots"]
+
+    SLOTS["Available Slots"]
+
+    SELECT["Select Slot"]
+
+    CONFIRMATION["Booking Confirmation"]
+
+    API["FastAPI Appointment API"]
+
+    DATABASE[("🐘 PostgreSQL")]
+
+    SUCCESS["✅ Appointment Confirmed"]
+
+    MYAPPOINTMENTS["📆 My Appointments"]
+
+    PATIENT --> DASHBOARD
+
+    DASHBOARD --> DOCTORID
+
+    DOCTORID --> CHECK
+
+    CHECK --> SLOTS
+
+    SLOTS --> SELECT
+
+    SELECT --> CONFIRMATION
+
+    CONFIRMATION --> API
+
+    API --> DATABASE
+
+    DATABASE --> API
+
+    API --> SUCCESS
+
+    SUCCESS --> MYAPPOINTMENTS
+```
+
+---
+
+# 🔄 API Request Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant Database
+
+    User->>Frontend: Perform Action
+
+    Frontend->>Backend: HTTP Request
+
+    Backend->>Backend: Validate Request
+
+    Backend->>Backend: Authenticate JWT
+
+    Backend->>Database: Query / Update Data
+
+    Database-->>Backend: Database Result
+
+    Backend-->>Frontend: JSON Response
+
+    Frontend-->>User: Updated Interface
+```
+
+---
+
+# 🗄️ Database Architecture
+
+```mermaid
+erDiagram
+    USER ||--o| DOCTOR : "can be"
+
+    DOCTOR ||--o{ AVAILABILITY : manages
+
+    DOCTOR ||--o{ APPOINTMENT_SLOT : has
+
+    USER ||--o{ APPOINTMENT : books
+
+    DOCTOR ||--o{ APPOINTMENT : receives
+
+    APPOINTMENT_SLOT ||--o| APPOINTMENT : assigned_to
+
+    USER {
+        uuid id
+        string full_name
+        string email
+        string password
+        string role
+        boolean is_active
+    }
+
+    DOCTOR {
+        uuid doctor_id
+        uuid user_id
+    }
+
+    AVAILABILITY {
+        uuid id
+        uuid doctor_id
+        date date
+        time start_time
+        time end_time
+    }
+
+    APPOINTMENT_SLOT {
+        uuid id
+        uuid doctor_id
+        date date
+        time start_time
+        time end_time
+        string status
+    }
+
+    APPOINTMENT {
+        uuid id
+        uuid patient_id
+        uuid doctor_id
+        uuid slot_id
+        string status
+    }
+```
+
+---
+
+# ☁️ Deployment Architecture
+
+```mermaid
+flowchart LR
+    USER["👤 User"]
+
+    FRONTEND["🌐 Render Static Site<br/>React + Vite"]
+
+    BACKEND["⚙️ Render Web Service<br/>FastAPI"]
+
+    DATABASE[("🐘 PostgreSQL")]
+
+    USER -->|"HTTPS"| FRONTEND
+
+    FRONTEND -->|"REST API / HTTPS"| BACKEND
+
+    BACKEND -->|"SQLAlchemy"| DATABASE
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+healthcare-appointment-manager/
+│
+├── backend/
+│   │
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── models/
+│   │   ├── schemas/
+│   │   ├── routers/
+│   │   ├── services/
+│   │   └── ...
+│   │
+│   ├── frontend/
+│   │   ├── public/
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── App.jsx
+│   │   │   ├── App.css
+│   │   │   └── main.jsx
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── vite.config.js
+│   │   └── index.html
+│   │
+│   ├── alembic/
+│   ├── tests/
+│   ├── requirements.txt
+│   ├── alembic.ini
+│   └── test_db.py
+│
+├── docs/
+│   └── screenshots/
+│       ├── frontend-home.png
+│       ├── frontend-login.png
+│       ├── frontend-dashboard.png
+│       ├── frontend-find-doctor.png
+│       ├── frontend-slots.png
+│       ├── frontend-booking.png
+│       ├── frontend-confirmation.png
+│       ├── frontend-appointments.png
+│       ├── frontend-profile.png
+│       ├── backend-swagger.png
+│       ├── backend-authentication.png
+│       ├── backend-doctor-availability.png
+│       ├── backend-slots.png
+│       └── backend-appointments.png
+│
+├── .gitignore
+└── README.md
+```
+
+---
+
+# 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| React | Frontend UI |
+| Vite | Frontend build tool |
+| React Router | Client-side routing |
+| JavaScript | Application logic |
+| CSS | Styling |
+| Lucide React | UI icons |
+| FastAPI | REST API |
+| Python | Backend |
+| Uvicorn | ASGI server |
+| SQLAlchemy | ORM |
+| Pydantic | Data validation |
+| JWT | Authentication |
+| OAuth2 | Authentication flow |
+| Alembic | Database migrations |
+| PostgreSQL | Database |
+| Git | Version control |
+| GitHub | Repository |
+| Render | Deployment |
+
+---
+
+# 🖥️ Frontend Screenshots
+
+> Place your screenshots inside `docs/screenshots/`.
+
+## 🏠 Home Page
+
+![Healthcare Appointment Manager Home](docs/screenshots/frontend-home.png)
+
+---
+
+## 🔐 Login Page
+
+![Healthcare Appointment Manager Login](docs/screenshots/frontend-login.png)
+
+---
+
+## 👤 Patient Dashboard
+
+![Patient Dashboard](docs/screenshots/frontend-dashboard.png)
+
+---
+
+## 👨‍⚕️ Find Doctor
+
+![Find Doctor](docs/screenshots/frontend-find-doctor.png)
+
+---
+
+## 🕐 Available Appointment Slots
+
+![Available Appointment Slots](docs/screenshots/frontend-slots.png)
+
+---
+
+## 📅 Book Appointment
+
+![Book Appointment](docs/screenshots/frontend-booking.png)
+
+---
+
+## ✅ Appointment Confirmation
+
+![Appointment Confirmation](docs/screenshots/frontend-confirmation.png)
+
+---
+
+## 📆 My Appointments
+
+![My Appointments](docs/screenshots/frontend-appointments.png)
+
+---
+
+## 👤 Profile
+
+![Patient Profile](docs/screenshots/frontend-profile.png)
+
+---
+
+# ⚙️ Backend Screenshots
+
+## 📚 Swagger API Documentation
+
+![Swagger API Documentation](docs/screenshots/backend-swagger.png)
+
+---
+
+## 🔐 Authentication APIs
+
+![Authentication APIs](docs/screenshots/backend-authentication.png)
+
+---
+
+## 👨‍⚕️ Doctor Availability APIs
+
+![Doctor Availability APIs](docs/screenshots/backend-doctor-availability.png)
+
+---
+
+## 🕐 Appointment Slot APIs
+
+![Appointment Slot APIs](docs/screenshots/backend-slots.png)
+
+---
+
+## 📅 Appointment APIs
+
+![Appointment APIs](docs/screenshots/backend-appointments.png)
+
+---
+
+# 📡 API Endpoints
+
+## 🔐 Authentication
+
+### Register
+
+```http
+POST /api/v1/auth/register
+```
+
+### Login
+
+```http
+POST /api/v1/auth/login
+```
+
+### Get Current User
+
+```http
+GET /api/v1/auth/me
+```
+
+---
+
+## 👨‍⚕️ Doctor Availability
+
+### Create Availability
+
+```http
+POST /api/v1/doctors/{doctor_id}/availability
+```
+
+### Get Availability
+
+```http
+GET /api/v1/doctors/{doctor_id}/availability
+```
+
+---
+
+## 🕐 Appointment Slots
+
+### Generate Appointment Slots
+
+```http
+POST /api/v1/doctors/{doctor_id}/slots/generate
+```
+
+### Get Doctor Slots
+
+```http
+GET /api/v1/doctors/{doctor_id}/slots
+```
+
+---
+
+## 📅 Appointments
+
+### Get My Appointments
+
+```http
+GET /api/v1/appointments
+```
+
+### Create Appointment
+
+```http
+POST /api/v1/appointments
+```
+
+### Cancel Appointment
+
+```http
+DELETE /api/v1/appointments/{appointment_id}
+```
+
+---
+
+# 📚 Swagger / OpenAPI
+
+FastAPI automatically provides interactive API documentation.
+
+### Production Swagger
+
+https://healthcare-appointment-manager-sz8l.onrender.com/docs
+
+Swagger allows developers to test:
+
+```text
+Authentication
+      ↓
+Current User
+      ↓
+Doctor Availability
+      ↓
+Appointment Slots
+      ↓
+Appointments
+```
+
+---
+
+# 💻 Local Development
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/Sonali1554/healthcare-appointment-manager.git
+```
+
+```bash
+cd healthcare-appointment-manager
+```
+
+---
+
+# ⚙️ Backend Setup
+
+Navigate to the backend:
+
+```powershell
+cd backend
+```
+
+Create a virtual environment:
+
+```powershell
+python -m venv venv
+```
+
+Activate it:
+
+```powershell
+.\venv\Scripts\activate
+```
+
+Install dependencies:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Start FastAPI:
+
+```powershell
+uvicorn app.main:app --reload
+```
+
+Backend:
+
+```text
+http://127.0.0.1:8000
+```
+
+Swagger:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
+
+# 🎨 Frontend Setup
+
+Open another terminal.
+
+```powershell
+cd backend/frontend
+```
+
+Install dependencies:
+
+```powershell
+npm install
+```
+
+Start Vite:
+
+```powershell
+npm run dev
+```
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+If port 5173 is already occupied, Vite automatically selects another available port.
+
+---
+
+# 🚀 Production Deployment
+
+## Frontend
+
+The React/Vite frontend is deployed as a Render Static Site.
+
+### Render Configuration
+
+```text
+Root Directory:
+backend/frontend
+
+Build Command:
+npm install && npm run build
+
+Publish Directory:
+dist
+```
+
+### Live Frontend
+
+https://healthcare-appointment-frontend-mcla.onrender.com
+
+---
+
+## Backend
+
+The FastAPI backend is deployed as a Render Web Service.
+
+### Live Backend
+
+https://healthcare-appointment-manager-sz8l.onrender.com
+
+### Swagger
+
+https://healthcare-appointment-manager-sz8l.onrender.com/docs
+
+---
+
+# 🔒 Security
+
+The application implements:
+
+- JWT authentication
+- OAuth2-compatible authentication
+- Bearer token authorization
+- Protected API endpoints
+- Role-based authorization
+- Authenticated user validation
+- Active-user validation
+- Password authentication
+- Input validation
+- CORS configuration
+- API-level access control
+
+---
+
+# 🧪 Testing
+
+Backend tests can be executed using:
+
+```bash
+pytest
+```
+
+API endpoints can also be manually tested through Swagger:
+
+https://healthcare-appointment-manager-sz8l.onrender.com/docs
+
+---
+
+# 📊 Project Status
+
+| Component | Status |
+|---|---|
+| React Frontend | ✅ Working |
+| Vite Build | ✅ Working |
+| FastAPI Backend | ✅ Working |
+| PostgreSQL | ✅ Configured |
+| JWT Authentication | ✅ Working |
+| Patient Registration | ✅ Working |
+| Doctor Registration | ✅ Working |
+| Patient Login | ✅ Working |
+| Doctor Login | ✅ Working |
+| Patient Dashboard | ✅ Working |
+| Find Doctor | ✅ Working |
+| Available Slots UI | ✅ Working |
+| Slot Selection | ✅ Working |
+| Booking Confirmation UI | ✅ Working |
+| My Appointments UI | ✅ Working |
+| Swagger Documentation | ✅ Working |
+| Backend Deployment | ✅ Live |
+| Frontend Deployment | ✅ Live |
+| GitHub Repository | ✅ Updated |
+
+---
+
+# ⚠️ Implementation Note
+
+During development, authorization behavior of some backend appointment and slot operations was tested through Swagger.
+
+The frontend currently contains a UI fallback for the slot and booking demonstration so that the complete appointment experience can be demonstrated through the deployed frontend.
+
+The authentication flow and authenticated user information were successfully verified against the deployed backend.
+
+The backend appointment and slot APIs remain available through Swagger for further backend integration and authorization refinement.
+
+---
+
+# 🔮 Future Improvements
+
+- Complete end-to-end appointment persistence from frontend
+- Doctor dashboard
+- Doctor calendar
+- Appointment cancellation from frontend
+- Email appointment notifications
+- Appointment reminders
+- Calendar integration
+- Doctor search by specialization
+- Doctor search by location
+- Patient medical history
+- Admin dashboard
+- Advanced filtering
+- Improved error handling
+- End-to-end automated testing
+- Monitoring and logging
+- Production analytics
+
+---
+
+# 🎯 Project Highlights
+
+```text
+🏥 Full-Stack Healthcare Platform
+⚛️ React + Vite Frontend
+⚙️ FastAPI REST Backend
+🐘 PostgreSQL Database
+🔐 JWT Authentication
+👨‍⚕️ Doctor Management
+📅 Doctor Availability
+🕐 Appointment Slots
+📆 Appointment Management
+👤 Patient Dashboard
+📚 Swagger / OpenAPI
+🧪 Backend Testing
+🐙 GitHub
+🚀 Render Deployment
+```
+
+---
+
+# 🔗 Important Links
+
+| Resource | Link |
+|---|---|
+| 🌐 Live Frontend | https://healthcare-appointment-frontend-mcla.onrender.com |
+| ⚙️ Backend API | https://healthcare-appointment-manager-sz8l.onrender.com |
+| 📚 Swagger Docs | https://healthcare-appointment-manager-sz8l.onrender.com/docs |
+| 💻 GitHub | https://github.com/Sonali1554/healthcare-appointment-manager |
+
+---
+
+# 👩‍💻 Author
+
+## Sonali Kumari
+
+**B.Tech — Computer Science and Engineering**  
+**VIT Bhopal University**
+
+---
+
+<p align="center">
+
+### 🏥 Healthcare Appointment Manager
+
+**Secure • Simple • Scalable Healthcare Appointment Management**
+
+</p>
