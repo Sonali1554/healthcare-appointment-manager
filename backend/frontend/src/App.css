@@ -1,0 +1,793 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f8fafc;
+  color: #172033;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, #e7f8f6 0, transparent 30%),
+    radial-gradient(circle at 90% 10%, #eef3ff 0, transparent 30%),
+    #f8fafc;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+  padding: 22px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 21px;
+  font-weight: 750;
+  color: #172033;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: #0f766e;
+  color: white;
+
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  color: #526078;
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.nav-links a {
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #0f766e;
+}
+
+.login-link {
+  color: #334155;
+}
+
+.register-button {
+  padding: 11px 18px;
+
+  border-radius: 10px;
+  background: #0f766e;
+  color: white !important;
+
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.18);
+}
+
+.register-button:hover {
+  background: #115e59;
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  min-height: 650px;
+  padding: 90px 30px 80px;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 30px;
+  background: #e6f7f5;
+  color: #0f766e;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+
+  color: #172033;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #0f766e;
+}
+
+.hero-content > p {
+  max-width: 620px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 30px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 14px 21px;
+
+  border-radius: 11px;
+
+  font-weight: 650;
+
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #0f766e;
+  color: white;
+
+  box-shadow: 0 10px 25px rgba(15, 118, 110, 0.22);
+}
+
+.primary-button:hover {
+  background: #115e59;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background: white;
+  border: 1px solid #dbe4ee;
+  color: #334155;
+}
+
+.secondary-button:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+
+.trust {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  color: #64748b;
+  font-size: 14px;
+}
+
+.trust div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+
+/* ================================
+   APPOINTMENT CARD
+================================ */
+
+.hero-card {
+  padding: 28px;
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.09),
+    0 5px 20px rgba(15, 23, 42, 0.04);
+
+  position: relative;
+}
+
+.hero-card::before {
+  content: "";
+
+  position: absolute;
+  width: 120px;
+  height: 120px;
+
+  background: #dff6f2;
+  border-radius: 50%;
+
+  top: -45px;
+  right: -35px;
+
+  z-index: -1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-bottom: 22px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.card-header p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 7px;
+}
+
+.card-header h3 {
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.card-header svg {
+  color: #0f766e;
+}
+
+.doctor-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 24px 0;
+}
+
+.doctor-avatar {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e6f7f5;
+  color: #0f766e;
+
+  font-weight: 750;
+}
+
+.doctor-card h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.appointment-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.appointment-details > div {
+  padding: 15px;
+
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.appointment-details span {
+  display: block;
+
+  color: #94a3b8;
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+.appointment-details strong {
+  font-size: 14px;
+  color: #334155;
+}
+
+.confirmed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 18px;
+
+  padding: 11px 13px;
+
+  border-radius: 10px;
+
+  background: #ecfdf5;
+  color: #047857;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.confirmed span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #10b981;
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.features-section,
+.workflow {
+  max-width: 1180px;
+  margin: auto;
+
+  padding: 90px 30px;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 55px;
+}
+
+.section-heading p {
+  color: #0f766e;
+
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  line-height: 1.2;
+
+  color: #172033;
+}
+
+
+/* ================================
+   FEATURE CARDS
+================================ */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  padding: 28px;
+
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+
+  transition: 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #e6f7f5;
+  color: #0f766e;
+
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* ================================
+   WORKFLOW
+================================ */
+
+.workflow {
+  padding-bottom: 110px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.step {
+  padding: 30px;
+
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 18px;
+
+  position: relative;
+}
+
+.step span {
+  display: block;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  color: #0f766e;
+
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-size: 18px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  max-width: 1180px;
+  margin: auto;
+
+  padding: 28px 30px;
+
+  border-top: 1px solid #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+
+/* ================================
+   AUTH PAGES
+================================ */
+
+.auth-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(circle at 20% 20%, #e2f6f3 0, transparent 35%),
+    radial-gradient(circle at 80% 80%, #e9efff 0, transparent 35%),
+    #f8fafc;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+
+  padding: 45px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.1),
+    0 5px 20px rgba(15, 23, 42, 0.04);
+
+  text-align: center;
+}
+
+.auth-card > svg {
+  color: #0f766e;
+
+  margin-bottom: 20px;
+}
+
+.auth-card h1 {
+  font-size: 32px;
+  color: #172033;
+
+  margin-bottom: 10px;
+}
+
+.auth-card > p {
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  margin-bottom: 28px;
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+
+  display: block;
+
+  padding: 14px 15px;
+
+  margin-bottom: 14px;
+
+  border: 1px solid #dbe3ec;
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #172033;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.auth-card input::placeholder {
+  color: #94a3b8;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  border-color: #0f766e;
+
+  background: white;
+
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+}
+
+.auth-card button {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 6px;
+  margin-bottom: 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #0f766e;
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.18);
+}
+
+.auth-card button:hover {
+  background: #115e59;
+  transform: translateY(-1px);
+}
+
+.auth-card a {
+  display: inline-block;
+
+  color: #0f766e;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    padding-top: 60px;
+
+    gap: 50px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons,
+  .trust {
+    justify-content: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 45px 20px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+
+  .trust {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .features-section,
+  .workflow {
+    padding: 65px 20px;
+  }
+
+  .features-grid,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading h2 {
+    font-size: 29px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .auth-page {
+    padding: 20px;
+  }
+
+  .auth-card {
+    padding: 32px 24px;
+  }
+}
