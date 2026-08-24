@@ -69,6 +69,72 @@ Role Validation
   ↓
 Protected Resource
 
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    A[🌐 Client / Swagger UI] --> B[🚀 FastAPI Application]
+
+    B --> C[🔐 Authentication]
+    B --> D[👨‍⚕️ Doctor Availability]
+    B --> E[🗓️ Appointment Slots]
+    B --> F[📅 Appointment Management]
+
+    C --> G[🎫 JWT Authentication]
+    G --> H[👤 User & Role Validation]
+
+    D --> I[📋 Availability Service]
+    I --> J[⚙️ Slot Generation Service]
+
+    J --> K[(🗄️ PostgreSQL)]
+
+    E --> J
+    E --> K
+
+    F --> K
+
+    B --> L[🧪 Pytest Test Suite]
+
+    M[🔧 Alembic Migrations] --> K
+```
+
+## 📅 Appointment Booking Workflow
+
+```mermaid
+flowchart TD
+    A[👨‍⚕️ Doctor] --> B[Set Availability]
+
+    B --> C[⚙️ Generate Appointment Slots]
+
+    C --> D[🟢 Available Slots]
+
+    E[👤 Patient] --> F[View Available Slots]
+
+    F --> G[📅 Select Slot]
+
+    G --> H{Is Slot Available?}
+
+    H -->|❌ No| I[⚠️ Return 409 Conflict]
+
+    H -->|✅ Yes| J[🔒 Lock Slot]
+
+    J --> K[📝 Create Appointment]
+
+    K --> L[🔵 Mark Slot as BOOKED]
+
+    L --> M[💾 Commit Transaction]
+
+    M --> N[✅ Appointment Confirmed]
+
+    N --> O{Appointment Action}
+
+    O -->|Cancel| P[❌ Cancel Appointment]
+
+    P --> Q[♻️ Release Slot]
+
+    O -->|Complete| R[✅ Mark Completed]
+```
+
 
 ## 🔐 Authentication Flow
 
@@ -160,9 +226,6 @@ erDiagram
         string cancellation_reason
     }
 ```
-
-
-
 
 
 ## 📸 API Demonstration
