@@ -73,8 +73,6 @@ Protected Resource
 
 ## 📅 Appointment Booking Workflow
 
-```mermaid
-flowchart TD
     A[👨‍⚕️ Doctor] --> B[Set Availability]
 
     B --> C[⚙️ Generate Appointment Slots]
