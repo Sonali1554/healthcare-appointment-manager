@@ -1084,48 +1084,6 @@ The backend appointment and slot APIs remain available through Swagger for furth
 
 ---
 
-# 🔮 Future Improvements
-
-- Complete end-to-end appointment persistence from frontend
-- Doctor dashboard
-- Doctor calendar
-- Appointment cancellation from frontend
-- Email appointment notifications
-- Appointment reminders
-- Calendar integration
-- Doctor search by specialization
-- Doctor search by location
-- Patient medical history
-- Admin dashboard
-- Advanced filtering
-- Improved error handling
-- End-to-end automated testing
-- Monitoring and logging
-- Production analytics
-
----
-
-# 🎯 Project Highlights
-
-```text
-🏥 Full-Stack Healthcare Platform
-⚛️ React + Vite Frontend
-⚙️ FastAPI REST Backend
-🐘 PostgreSQL Database
-🔐 JWT Authentication
-👨‍⚕️ Doctor Management
-📅 Doctor Availability
-🕐 Appointment Slots
-📆 Appointment Management
-👤 Patient Dashboard
-📚 Swagger / OpenAPI
-🧪 Backend Testing
-🐙 GitHub
-🚀 Render Deployment
-```
-
----
-
 # 🔗 Important Links
 
 | Resource | Link |
