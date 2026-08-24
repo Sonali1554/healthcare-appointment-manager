@@ -70,30 +70,6 @@ Role Validation
 Protected Resource
 
 
-```mermaid
-sequenceDiagram
-    participant U as 👤 User
-    participant API as 🚀 FastAPI
-    participant DB as 🗄️ PostgreSQL
-
-    U->>API: Register / Login
-    API->>DB: Find User
-    DB-->>API: User Record
-
-    API->>API: 🔒 Verify Password
-    API->>API: 🎫 Generate JWT
-
-    API-->>U: Access Token
-
-    U->>API: Protected Request
-    API->>API: 🔍 Validate JWT
-    API->>DB: Validate User
-
-    DB-->>API: User + Role
-
-    API->>API: 🛡️ Check Permissions
-    API-->>U: Protected Response
-```
 
 ## 🗄️ Database Architecture
 
