@@ -731,59 +731,50 @@ healthcare-appointment-manager/
 
 # 🖥️ Frontend Screenshots
 
-> Place your screenshots inside `docs/screenshots/`.
+<img width="1920" height="1200" alt="Screenshot (1410)" src="https://github.com/user-attachments/assets/66ad4672-3b27-4113-a593-2d533342a5f6" />
+
 
 ## 🏠 Home Page
 
-![Healthcare Appointment Manager Home](docs/screenshots/frontend-home.png)
+<img width="1917" height="1198" alt="Screenshot 2026-08-24 161426" src="https://github.com/user-attachments/assets/d23245ff-0700-4552-a4c1-06cd7dd642aa" />
+
 
 ---
 
 ## 🔐 Login Page
 
-![Healthcare Appointment Manager Login](docs/screenshots/frontend-login.png)
+<img width="952" height="1001" alt="Screenshot 2026-08-24 143919" src="https://github.com/user-attachments/assets/add7e5b7-ea15-43b6-8d52-bb6c658cc103" />
+
 
 ---
 
 ## 👤 Patient Dashboard
 
-![Patient Dashboard](docs/screenshots/frontend-dashboard.png)
+<img width="1920" height="1200" alt="Screenshot (1409)" src="https://github.com/user-attachments/assets/1059e68f-728d-42d6-80a7-645b787976d3" />
+
 
 ---
 
 ## 👨‍⚕️ Find Doctor
+<img width="891" height="786" alt="Screenshot 2026-08-24 164511" src="https://github.com/user-attachments/assets/c68ce2bd-41c1-48f9-8fa7-a4ae69d3254b" />
 
-![Find Doctor](docs/screenshots/frontend-find-doctor.png)
+
+
+
 
 ---
 
 ## 🕐 Available Appointment Slots
 
-![Available Appointment Slots](docs/screenshots/frontend-slots.png)
+<img width="960" height="1032" alt="Screenshot 2026-08-24 172230" src="https://github.com/user-attachments/assets/4c3357d3-3cd8-49fa-adbc-e185b51db157" />
+
 
 ---
 
 ## 📅 Book Appointment
 
-![Book Appointment](docs/screenshots/frontend-booking.png)
+<img width="966" height="1198" alt="Screenshot 2026-08-24 172750" src="https://github.com/user-attachments/assets/be30098c-c46e-476a-8abf-f8739aad3fa7" />
 
----
-
-## ✅ Appointment Confirmation
-
-![Appointment Confirmation](docs/screenshots/frontend-confirmation.png)
-
----
-
-## 📆 My Appointments
-
-![My Appointments](docs/screenshots/frontend-appointments.png)
-
----
-
-## 👤 Profile
-
-![Patient Profile](docs/screenshots/frontend-profile.png)
 
 ---
 
@@ -791,31 +782,22 @@ healthcare-appointment-manager/
 
 ## 📚 Swagger API Documentation
 
-![Swagger API Documentation](docs/screenshots/backend-swagger.png)
+<img width="952" height="1156" alt="Screenshot 2026-08-23 203326" src="https://github.com/user-attachments/assets/8e128cd7-ae30-4a02-8420-de85c7232e69" />
+
 
 ---
 
 ## 🔐 Authentication APIs
 
-![Authentication APIs](docs/screenshots/backend-authentication.png)
+<img width="967" height="1130" alt="Screenshot 2026-08-23 190711" src="https://github.com/user-attachments/assets/0eb3f077-6af9-41ae-92af-c878448ee6a2" />
+
 
 ---
 
 ## 👨‍⚕️ Doctor Availability APIs
 
-![Doctor Availability APIs](docs/screenshots/backend-doctor-availability.png)
+<img width="967" height="1130" alt="Screenshot 2026-08-23 190711" src="https://github.com/user-attachments/assets/2cf03659-e162-4192-be8a-c2ee38ed54d0" />
 
----
-
-## 🕐 Appointment Slot APIs
-
-![Appointment Slot APIs](docs/screenshots/backend-slots.png)
-
----
-
-## 📅 Appointment APIs
-
-![Appointment APIs](docs/screenshots/backend-appointments.png)
 
 ---
 
