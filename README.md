@@ -11,6 +11,13 @@
 
 ---
 
+
+## 🚀 Live Deployment
+
+🌐 **Live API:** https://healthcare-appointment-manager-sz8l.onrender.com
+
+📚 **Swagger API Documentation:** https://healthcare-appointment-manager-sz8l.onrender.com/docs
+
 ## 📌 Overview
 
 The **Healthcare Appointment Manager** is a backend REST API designed to manage the complete appointment scheduling workflow between patients and doctors.
