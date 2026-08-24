@@ -95,6 +95,7 @@ flowchart TD
     B --> L[🧪 Pytest Test Suite]
 
     M[🔧 Alembic Migrations] --> K
+```
 
 
 ## 📅 Appointment Booking Workflow
